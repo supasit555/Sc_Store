@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        #capturedImage {
+            width: 100px;
+            height: 100px;
+            display: none;
+        }
+        .button-effect {
+            transition-duration: 0.4s;
+        }
+        .button-effect:hover {
+            transform: scale(1.1);
+        }
+        @media (max-width: 450px) {
+            .complete-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .log-container i{
+                margin-left: 10px;
+            }
+        }  
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="add.js" type="module"></script>
+    <title>Add</title>
+</head>
+<body>
+    <nav class="bg-gray-800 text-white p-4 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-center">SC_Store <br><p style="margin-right: 50px; font-size:20px">Add</p></a>
+        </div>
+    </nav>
+    <h1 class="text-2xl font-bold text-center mb-4">เพิ่มรูปภาพ สินค้า ชื่อ ราคา ประเภท</h1>
+    <input type="file" name="image" accept="image/*" capture="environment" id="imageInput" style="margin-left: 10px;"><br><br>
+    <img id="capturedImage" alt="Captured Image" style="display:none;" style="margin-left: 10px;"><br>
+    <input type="text" id="name" placeholder="ชื่อ" class="w-1/2 p-2 border border-gray-300 rounded-l-md" style="margin-left: 10px;"><br><br>
+    <input type="number" id="price" placeholder="ราคา" class="w-1/2 p-2 border border-gray-300 rounded-l-md" style="margin-left: 10px;"><br><br>
+    <select name="veget" id="type" class="block  p-2 border border-gray-300 rounded-md mb-4" style="margin-left: 10px;">
+        <option value="">กรุณาเลือกประเภท</option>
+        <option value="kanom">ขนม</option>
+        <option value="drink">เครื่องดื่ม</option>
+        <option value="noteat">ของใช้</option>
+        <option value="Drugs">เสพติด</option>
+    </select>
+    <button id="uploadButton" class="bg-yellow-500 hover:bg-yellow-700 text-black font-bold py-2 px-4 rounded mr-2 button-effect" style="margin-left: 10px;">Upload to Firebase</button>
+</body>
+</html>
+
+ 
